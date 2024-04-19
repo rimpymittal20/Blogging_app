@@ -1,0 +1,6 @@
+2024-04-19 12:35:39.999694+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM ARTICLES INFORMATION_SCHEMA[*].TABLES"; SQL statement:
+SELECT * FROM ARTICLES INFORMATION_SCHEMA.TABLES [42000-224]
+2024-04-19 12:35:52.598127+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM ARTICLES INFORMATION_SCHEMA[*].TABLES"; SQL statement:
+SELECT * FROM ARTICLES INFORMATION_SCHEMA.TABLES [42000-224]
