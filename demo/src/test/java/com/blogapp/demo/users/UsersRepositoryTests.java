@@ -25,7 +25,6 @@ public class UsersRepositoryTests {
                 .build();
 
         usersRepository.save(user);
-
     }
 
     @Test
@@ -36,7 +35,6 @@ public class UsersRepositoryTests {
                 .username("Rimpy Mittal")
                 .email("rimpymittal212@gmail.com")
                 .build();
-
 
         usersRepository.save(user);
         var users=usersRepository.findAll();
