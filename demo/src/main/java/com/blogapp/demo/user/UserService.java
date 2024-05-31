@@ -1,7 +1,10 @@
 package com.blogapp.demo.user;
 
 import com.blogapp.demo.user.dtos.CreateUserRequest;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -10,16 +13,25 @@ public class UserService {
     //private UsersRepository usersRepository;
 
     private final UsersRepository usersRepository;
-    public UserService(UsersRepository usersRepository) {
+    private final ModelMapper modelMapper;
+    public UserService(UsersRepository usersRepository, ModelMapper modelMapper) {
         this.usersRepository = usersRepository;
+        this.modelMapper = modelMapper;
+    }
+
+    public List<UserEntity> getUsers() {
+        return usersRepository.findAll();
     }
 
     public UserEntity createUser(CreateUserRequest req)
     {
-        var newUser=UserEntity.builder()
-                .username(req.getUsername())
-                .email(req.getEmail())
-                .build();
+        var newUser=modelMapper.map(req, UserEntity.class);
+
+        //replacing all code with modelMapper(mapping of DTOs into Entity)
+//        var newUser=UserEntity.builder()
+//                .username(req.getUsername())
+//                .email(req.getEmail())
+//                .build();
         return usersRepository.save(newUser);
     }
     public UserEntity getUserById(Long authorId)
