@@ -4,6 +4,7 @@ import com.blogapp.demo.articles.ArticleEntity;
 import com.blogapp.demo.user.UserEntity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -13,8 +14,10 @@ import java.util.Date;
 @Data
 @Getter
 @Setter
+@Builder
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
 public class CommentEntity {
