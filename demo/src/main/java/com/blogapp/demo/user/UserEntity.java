@@ -21,6 +21,11 @@ public class UserEntity {
     @Column(name = "username",nullable = false)
     @NonNull
     private String username;
+
+    @Column(name = "password",nullable = false)
+    @NonNull
+    private String password;
+
     @Column(name = "email",nullable = false)  // can also skip name
     @NonNull
     private String email;
